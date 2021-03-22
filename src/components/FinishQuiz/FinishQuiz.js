@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './FinishQuiz.module.css'
 import Button from "../UI/Button/Button";
+import {Link} from "react-router-dom";
 
 const FinishQuiz = props => {
 
@@ -35,8 +36,10 @@ const FinishQuiz = props => {
             <p>Правильно {successCount} из {props.quiz.length}</p>
 
             <div>
-                <Button onClick={props.onRetry} type='primary'>Повторить</Button>
-                <Button onClick={props.onRetry} type='success'>Вернуться ко всем тестам</Button>
+               <Button onClick={props.onRetry} type='primary'>Повторить</Button>
+               <Link to={'/'}>
+                   <Button onClick={props.onRetry} type='success'>Вернуться ко всем тестам</Button>
+               </Link>
             </div>
         </div>
     )
