@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/QuizeUdemy/static/css/main.53df928f.chunk.css",
-    "main.js": "/QuizeUdemy/static/js/main.c55ae7c5.chunk.js",
-    "main.js.map": "/QuizeUdemy/static/js/main.c55ae7c5.chunk.js.map",
-    "runtime-main.js": "/QuizeUdemy/static/js/runtime-main.5a7e63fc.js",
-    "runtime-main.js.map": "/QuizeUdemy/static/js/runtime-main.5a7e63fc.js.map",
-    "static/js/2.0469b29e.chunk.js": "/QuizeUdemy/static/js/2.0469b29e.chunk.js",
-    "static/js/2.0469b29e.chunk.js.map": "/QuizeUdemy/static/js/2.0469b29e.chunk.js.map",
-    "static/js/3.28f516e1.chunk.js": "/QuizeUdemy/static/js/3.28f516e1.chunk.js",
-    "static/js/3.28f516e1.chunk.js.map": "/QuizeUdemy/static/js/3.28f516e1.chunk.js.map",
+    "main.css": "/QuizeUdemy/static/css/main.8c8c1cfe.chunk.css",
+    "main.js": "/QuizeUdemy/static/js/main.7db2a357.chunk.js",
+    "main.js.map": "/QuizeUdemy/static/js/main.7db2a357.chunk.js.map",
+    "runtime-main.js": "/QuizeUdemy/static/js/runtime-main.40d294a5.js",
+    "runtime-main.js.map": "/QuizeUdemy/static/js/runtime-main.40d294a5.js.map",
+    "static/js/2.68c7744e.chunk.js": "/QuizeUdemy/static/js/2.68c7744e.chunk.js",
+    "static/js/2.68c7744e.chunk.js.map": "/QuizeUdemy/static/js/2.68c7744e.chunk.js.map",
+    "static/js/3.9ac6abd4.chunk.js": "/QuizeUdemy/static/js/3.9ac6abd4.chunk.js",
+    "static/js/3.9ac6abd4.chunk.js.map": "/QuizeUdemy/static/js/3.9ac6abd4.chunk.js.map",
     "index.html": "/QuizeUdemy/index.html",
-    "static/css/main.53df928f.chunk.css.map": "/QuizeUdemy/static/css/main.53df928f.chunk.css.map",
-    "static/js/2.0469b29e.chunk.js.LICENSE.txt": "/QuizeUdemy/static/js/2.0469b29e.chunk.js.LICENSE.txt"
+    "static/css/main.8c8c1cfe.chunk.css.map": "/QuizeUdemy/static/css/main.8c8c1cfe.chunk.css.map",
+    "static/js/2.68c7744e.chunk.js.LICENSE.txt": "/QuizeUdemy/static/js/2.68c7744e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5a7e63fc.js",
-    "static/js/2.0469b29e.chunk.js",
-    "static/css/main.53df928f.chunk.css",
-    "static/js/main.c55ae7c5.chunk.js"
+    "static/js/runtime-main.40d294a5.js",
+    "static/js/2.68c7744e.chunk.js",
+    "static/css/main.8c8c1cfe.chunk.css",
+    "static/js/main.7db2a357.chunk.js"
   ]
 }
