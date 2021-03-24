@@ -9,7 +9,7 @@ return (
         <p className={classes.Question}>
         <span>
             <strong>{props.answerNumber}.</strong>&nbsp;
-            {props.questuon}
+            {props.question}
         </span>
 
             <small>{props.answerNumber}/{props.quizLenght}</small>

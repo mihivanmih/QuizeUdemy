@@ -3,6 +3,7 @@ import classes from './Auth.module.css'
 import Button from "../../components/UI/Button/Button";
 import Input from "../../components/UI/Input/Input";
 import is from 'is_js'
+import axios from "../../axios/axiosQuiz";
 
 class Auth extends Component {
 
@@ -36,12 +37,38 @@ class Auth extends Component {
         }
     }
 
-    loginHandler = () => {
+    loginHandler = async () => {
+        const authData = {
+            email: this.state.formControls.email.value,
+            password: this.state.formControls.password.value,
+            returnSecureToken: true
+        }
+        try {
+            const respons = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBiPNjYynqlIyylpSb6zCRHIjCV5J3KDUw', authData)
 
+            console.log(respons.data);
+        }
+        catch (e)
+        {
+            console.log(e)
+        }
     }
 
-    registerHandler = () => {
+    registerHandler = async () => {
+        const authData = {
+            email: this.state.formControls.email.value,
+            password: this.state.formControls.password.value,
+            returnSecureToken: true
+        }
+        try {
+            const respons = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBiPNjYynqlIyylpSb6zCRHIjCV5J3KDUw', authData)
 
+            console.log(respons.data);
+        }
+        catch (e)
+        {
+            console.log(e)
+        }
     }
 
     submitHandler = (event) => {
@@ -49,21 +76,21 @@ class Auth extends Component {
     }
 
     validateControl = (value, validation) => {
-        if(!validation) {
+        if (!validation) {
             return true
         }
 
         let isValue = true
 
-        if(validation.required) {
+        if (validation.required) {
             isValue = value.trim() !== '' && isValue
         }
 
-        if(validation.email) {
+        if (validation.email) {
             isValue = is.email(value)
         }
 
-        if(validation.minLenght) {
+        if (validation.minLenght) {
             isValue = value.length >= validation.minLenght && isValue
         }
 
@@ -73,8 +100,8 @@ class Auth extends Component {
 
     onChangeHandler = (event, controlName) => {
 
-        const formControls = { ...this.state.formControls }
-        const control = { ...formControls[controlName] }
+        const formControls = {...this.state.formControls}
+        const control = {...formControls[controlName]}
 
         control.value = event.target.value
         control.touched = true
@@ -85,7 +112,7 @@ class Auth extends Component {
         let isFormValid = true
 
         //проходим по копии массива, уже новому
-        Object.keys(formControls).forEach( name => {
+        Object.keys(formControls).forEach(name => {
             isFormValid = formControls[name].valid && isFormValid
         })
 
@@ -95,8 +122,8 @@ class Auth extends Component {
         })
     }
 
-    renderInputs () {
-        return Object.keys(this.state.formControls).map( (controlname, index) => {
+    renderInputs() {
+        return Object.keys(this.state.formControls).map((controlname, index) => {
             const control = this.state.formControls[controlname]
             return (
                 <Input
@@ -123,7 +150,7 @@ class Auth extends Component {
 
                     <form onSubmit={this.submitHandler} className={classes.AuthForm}>
 
-                        { this.renderInputs() }
+                        {this.renderInputs()}
 
                         <Button
                             type={'success'}

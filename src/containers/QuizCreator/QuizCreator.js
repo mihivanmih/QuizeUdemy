@@ -4,7 +4,7 @@ import classes from "./QuizCreator.module.css"
 import {creacteControl, validateFramework, validateFormFramework} from "../../components/Form/formFramework";
 import Input from "../../components/UI/Input/Input";
 import Select from "../../components/UI/Select/Select";
-import axios from "axios";
+import axios from "../../axios/axiosQuiz"
 
 function createOptionControl(number) {
     return creacteControl({
@@ -53,7 +53,7 @@ class QuizCreator extends Component {
             id: index,
             question: question.value,
             rightAnswerId: this.state.rightAnswerId,
-            answes: [
+            answers: [
                 {text: option1.value, id: option1.id},
                 {text: option2.value, id: option2.id},
                 {text: option3.value, id: option3.id},
@@ -61,7 +61,7 @@ class QuizCreator extends Component {
             ]
         }
 
-        quiz = [quiz, questionItem]
+        quiz = [ ...quiz, questionItem]
         this.setState({
             quiz,
             rightAnswerId: 1,
@@ -74,7 +74,7 @@ class QuizCreator extends Component {
     createQuizHandler = async () => {
 
         try {
-            await axios.post('https://react-quiz-93a24-default-rtdb.firebaseio.com/quiz.json', this.state.quiz)
+            await axios.post('quiz.json', this.state.quiz)
 
             this.setState({
                 quiz: [],
