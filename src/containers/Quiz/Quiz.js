@@ -2,38 +2,11 @@ import React, {Component} from 'react'
 import classes from './Quiz.module.css'
 import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
 import FinishQuiz from "../../components/FinishQuiz/FinishQuiz";
-import axios from "../../axios/axiosQuiz"
 import Loader from "../../components/UI/Loader/Loader";
 import {connect} from "react-redux";
 import retryQuizFunction, {fetchQuizById, fetchQuizes, quizAnswerClick} from "../../store/actions/quiz";
-import quizReducer from "../../store/reduser/quiz";
 
 class Quiz extends Component {
-
-    /*
-        state = {
-            results: {}, // {[id]: success error }
-            isFinish: false,
-            activeQuestion: 0,
-            answerState: null, // { [id]: 'success' 'error' }
-            quiz: [],
-            loading: true
-        }
-    */
-
-    /*    onAnswerClickHandler = (answerId) => {
-
-        }*/
-
-
-/*    retryHandler = () => {
-        this.setState({
-            results: {}, // {[id]: success error }
-            isFinish: false,
-            activeQuestion: 0,
-            answerState: null, // { [id]: 'success' 'error' }
-        })
-    }*/
 
     componentDidMount() {
         this.props.fetchQuizById(this.props.match.params.id)

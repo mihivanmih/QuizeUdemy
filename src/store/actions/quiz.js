@@ -107,7 +107,7 @@ export function quizAnswerClick(answerId) {
     return (dispatch, getState) => {
 
 
-        console.log('getState', getState().quizReducer);
+        console.log('getState',  );
 
         const state = getState().quizReducer
 
@@ -125,42 +125,20 @@ export function quizAnswerClick(answerId) {
 
             dispatch(quizSetState({[answerId]: 'success'}, results))
 
-            /*            setState({
-                            answerState: { [answerId]: 'success'}
-                        })*/
-
             const timeout = window.setTimeout(() => {
 
                 if (isQuizFinished(state.activeQuestion, state.quiz.length)) {
-
                     dispatch(finishQuiz())
-                    /*               this.setState({
-                                       isFinish: true
-                                   })*/
-
                 } else {
-                    /*             this.setState({
-                                     activeQuestion: this.state.activeQuestion + 1,
-                                     answerState: null,
-                                     results: results
-                                 })*/
-                   // dispatchEvent(quizNextQuestion(state.activeQuestion + 1))
                     dispatch(quizNextQuestion(state.activeQuestion + 1))
                 }
-
                 window.clearTimeout(timeout)
             }, 100)
 
 
         } else {
-
             results[question.id] = 'error'
             dispatch(quizSetState({[answerId]: 'error'}, results))
-
-            /*            this.setState({
-                            answerState: { [answerId]: 'error'},
-                            results: results
-                        })*/
         }
     }
 }

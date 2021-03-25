@@ -5,6 +5,9 @@ import {creacteControl, validateFramework, validateFormFramework} from "../../co
 import Input from "../../components/UI/Input/Input";
 import Select from "../../components/UI/Select/Select";
 import axios from "../../axios/axiosQuiz"
+import {connect} from "react-redux";
+import {createQuizeQuestion, finishCreateQuiz} from "../../store/actions/create";
+import {Redirect} from "react-router-dom";
 
 function createOptionControl(number) {
     return creacteControl({
@@ -32,7 +35,6 @@ function createFormControls() {
 class QuizCreator extends Component {
 
     state = {
-        quiz: [],
         rightAnswerId: 1,
         isFormValid: false,
         formControls: createFormControls()
@@ -44,13 +46,13 @@ class QuizCreator extends Component {
     }
 
     addQuestionHandler = () => {
-        let quiz = [ ...this.state.quiz]
-        const index = quiz.length + 1
+        /*let quiz = [ ...this.state.quiz]
+        const index = quiz.length + 1*/
 
         const {question, option1, option2, option3, option4} = this.state.formControls //деструкторизайия объекта
 
         const questionItem = {
-            id: index,
+            id: this.props.quiz.length + 1,
             question: question.value,
             rightAnswerId: this.state.rightAnswerId,
             answers: [
@@ -61,9 +63,9 @@ class QuizCreator extends Component {
             ]
         }
 
-        quiz = [ ...quiz, questionItem]
+        this.props.createQuizeQuestion(questionItem)
+      /*  quiz = [ ...quiz, questionItem]*/
         this.setState({
-            quiz,
             rightAnswerId: 1,
             isFormValid: false,
             formControls: createFormControls()
@@ -71,29 +73,20 @@ class QuizCreator extends Component {
 
     }
 
-    createQuizHandler = async () => {
+    createQuizHandler = () => {
 
-        try {
-            await axios.post('quiz.json', this.state.quiz)
+        this.setState({
+            rightAnswerId: 1,
+            isFormValid: false,
+            formControls: createFormControls()
+        })
 
-            this.setState({
-                quiz: [],
-                rightAnswerId: 1,
-                isFormValid: false,
-                formControls: createFormControls()
-            })
+        this.props.finishCreateQuiz().then(response => {
+            this.props.history.push("/")
+        })
 
-        } catch (e) {
-            console.log(e)
-        }
 
-        /*
-        axios.post('https://react-quiz-93a24-default-rtdb.firebaseio.com/quiz.json', this.state.quiz)
-                    .then( response => {
-                        console.log(response)
-                    })
-                    .catch( error => console.log(error))
-        */
+
     }
 
     onChangeHandler = (value, controlName) => {
@@ -131,7 +124,7 @@ class QuizCreator extends Component {
                         errorMessage={control.errorMessage}
                         onChange={event => this.onChangeHandler(event.target.value, controlName)}
                     />
-                    { index === 0 ? <hr /> : null }
+                    { index === 1 ? <hr /> : null }
                 </React.Fragment>
             )
         })
@@ -182,7 +175,7 @@ class QuizCreator extends Component {
                         <Button
                             type="success"
                             onClick={this.createQuizHandler}
-                            disabled={this.state.quiz.length === 0}
+                            disabled={this.props.quiz.length === 0}
                         >
                             Создать тест
                         </Button>
@@ -194,4 +187,19 @@ class QuizCreator extends Component {
     }
 }
 
-export default QuizCreator
+
+const mapStateToProps = (state) => {
+    return {
+        quiz: state.createReduser.quiz,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createQuizeQuestion: item => dispatch(createQuizeQuestion(item)),
+        finishCreateQuiz: () => dispatch(finishCreateQuiz())
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuizCreator)
