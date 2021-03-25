@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/QuizeUdemy/static/css/main.5bed7f1e.chunk.css",
-    "main.js": "/QuizeUdemy/static/js/main.97ab7a68.chunk.js",
-    "main.js.map": "/QuizeUdemy/static/js/main.97ab7a68.chunk.js.map",
-    "runtime-main.js": "/QuizeUdemy/static/js/runtime-main.1b6579a9.js",
-    "runtime-main.js.map": "/QuizeUdemy/static/js/runtime-main.1b6579a9.js.map",
-    "static/js/2.7a74469d.chunk.js": "/QuizeUdemy/static/js/2.7a74469d.chunk.js",
-    "static/js/2.7a74469d.chunk.js.map": "/QuizeUdemy/static/js/2.7a74469d.chunk.js.map",
-    "static/js/3.2c228131.chunk.js": "/QuizeUdemy/static/js/3.2c228131.chunk.js",
-    "static/js/3.2c228131.chunk.js.map": "/QuizeUdemy/static/js/3.2c228131.chunk.js.map",
+    "main.js": "/QuizeUdemy/static/js/main.325c4db9.chunk.js",
+    "main.js.map": "/QuizeUdemy/static/js/main.325c4db9.chunk.js.map",
+    "runtime-main.js": "/QuizeUdemy/static/js/runtime-main.7eddb14b.js",
+    "runtime-main.js.map": "/QuizeUdemy/static/js/runtime-main.7eddb14b.js.map",
+    "static/js/2.ed5c8870.chunk.js": "/QuizeUdemy/static/js/2.ed5c8870.chunk.js",
+    "static/js/2.ed5c8870.chunk.js.map": "/QuizeUdemy/static/js/2.ed5c8870.chunk.js.map",
+    "static/js/3.ac0e6d0a.chunk.js": "/QuizeUdemy/static/js/3.ac0e6d0a.chunk.js",
+    "static/js/3.ac0e6d0a.chunk.js.map": "/QuizeUdemy/static/js/3.ac0e6d0a.chunk.js.map",
     "index.html": "/QuizeUdemy/index.html",
     "static/css/main.5bed7f1e.chunk.css.map": "/QuizeUdemy/static/css/main.5bed7f1e.chunk.css.map",
-    "static/js/2.7a74469d.chunk.js.LICENSE.txt": "/QuizeUdemy/static/js/2.7a74469d.chunk.js.LICENSE.txt"
+    "static/js/2.ed5c8870.chunk.js.LICENSE.txt": "/QuizeUdemy/static/js/2.ed5c8870.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1b6579a9.js",
-    "static/js/2.7a74469d.chunk.js",
+    "static/js/runtime-main.7eddb14b.js",
+    "static/js/2.ed5c8870.chunk.js",
     "static/css/main.5bed7f1e.chunk.css",
-    "static/js/main.97ab7a68.chunk.js"
+    "static/js/main.325c4db9.chunk.js"
   ]
 }
