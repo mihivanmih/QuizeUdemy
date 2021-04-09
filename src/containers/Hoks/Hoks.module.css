@@ -1,0 +1,17 @@
+.hooks {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    flex-grow: 1;
+    background: rgb(179,0,255);
+    background: linear-gradient(76deg, rgba(179,0,255,1) 0%, rgba(219,39,159,1) 0%, rgba(149,61,120,1) 100%);
+}
+
+.hooks h1 {
+    color: #fff;
+    margin-left: 10px;
+}
+
+.hooksWrapper {
+    width: 600px;
+}
