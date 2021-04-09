@@ -34,6 +34,7 @@ class Drawer extends Component {
 
         let links = [
             {to: '/', label: 'Список', exact: true},
+            {to: '/hooks', label: 'Хуки теория', exact: true},
         ]
 
         if(this.props.isAut) {

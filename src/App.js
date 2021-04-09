@@ -10,6 +10,7 @@ import authReduser from "./store/reduser/auth";
 import React, {Component} from "react";
 import Logout from "./components/Logout/Logout";
 import {autoLogin} from "./store/actions/auth";
+import Hoks from "./containers/Hoks/Hoks";
 
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
             <Switch>
                 <Route path={'/auth'} component={Auth}/>
                 <Route path={'/quiz/:id'} component={Quiz}/>
+                <Route path={'/hooks'} component={Hoks}/>
                 <Route path={'/'} exact component={QuizList}/>
                 <Redirect to={'/'} />
             </Switch>
